@@ -28,7 +28,7 @@
 /**
  * Marlin release version identifier
  */
-//#define SHORT_BUILD_VERSION "2.0.9.2"
+#define SHORT_BUILD_VERSION "2.0.8.2"
 
 /**
  * Verbose version identifier which should contain a reference to the location
@@ -41,12 +41,12 @@
  * here we define this default string as the date where the latest release
  * version was tagged.
  */
-//#define STRING_DISTRIBUTION_DATE "2021-09-03"
+#define STRING_DISTRIBUTION_DATE "2021-11-03"
 
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-//#define MACHINE_NAME "3D Printer"
+#define MACHINE_NAME "Ender 5 Pro"
 
 /**
  * The SOURCE_CODE_URL is the location where users will find the Marlin Source
@@ -54,7 +54,7 @@
  * has a distinct Github fork— the Source Code URL should just be the main
  * Marlin repository.
  */
-//#define SOURCE_CODE_URL "github.com/MarlinFirmware/Marlin"
+#define SOURCE_CODE_URL "github.com/dremc/Marlin"
 
 /**
  * Default generic printer UUID.
