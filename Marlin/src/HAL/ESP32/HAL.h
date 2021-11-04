@@ -142,10 +142,6 @@ void HAL_idletask();
 inline void HAL_init() {}
 void HAL_init_board();
 
-#if ENABLED(USE_ESP32_EXIO)
-  void Write_EXIO(uint8_t IO, uint8_t v);
-#endif
-
 //
 // Delay in cycles (used by DELAY_NS / DELAY_US)
 //

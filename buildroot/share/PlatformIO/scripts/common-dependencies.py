@@ -2,12 +2,7 @@
 # common-dependencies.py
 # Convenience script to check dependencies and add libs and sources for Marlin Enabled Features
 #
-import subprocess,os,re,pioutil
-Import("env")
-
-# Detect that 'vscode init' is running
-if pioutil.is_vscode_init():
-	env.Exit(0)
+import subprocess,os,re
 
 PIO_VERSION_MIN = (5, 0, 3)
 try:
@@ -35,6 +30,8 @@ except:
 
 from platformio.package.meta import PackageSpec
 from platformio.project.config import ProjectConfig
+
+Import("env")
 
 #print(env.Dump())
 
@@ -218,13 +215,7 @@ def search_compiler():
 	# Find the current platform compiler by searching the $PATH
 	# which will be in a platformio toolchain bin folder
 	path_regex = re.escape(env['PROJECT_PACKAGES_DIR'])
-
-	# See if the environment provides a default compiler
-	try:
-		gcc = env.GetProjectOption('custom_deps_gcc')
-	except:
-		gcc = "g++"
-
+	gcc = "g++"
 	if env['PLATFORM'] == 'win32':
 		path_separator = ';'
 		path_regex += r'.*\\bin'
@@ -250,8 +241,6 @@ def search_compiler():
 			return filepath
 
 	filepath = env.get('CXX')
-	if filepath == 'CC':
-		filepath = gcc
 	blab("Couldn't find a compiler! Fallback to %s" % filepath)
 	return filepath
 

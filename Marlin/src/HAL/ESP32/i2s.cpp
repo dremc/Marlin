@@ -23,8 +23,6 @@
 
 #include "../../inc/MarlinConfigPre.h"
 
-#if DISABLED(USE_ESP32_EXIO)
-
 #include "i2s.h"
 
 #include "../shared/Marduino.h"
@@ -342,5 +340,4 @@ void i2s_push_sample() {
   dma.current[dma.rw_pos++] = i2s_port_data;
 }
 
-#endif // !USE_ESP32_EXIO
 #endif // ARDUINO_ARCH_ESP32
